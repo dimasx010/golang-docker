@@ -24,5 +24,9 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
-     - name: Download Artifact
-       run: echo Descargando artifact
+      - name: Download a single artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: Go-Build
+      - name: Check Artifact
+        run: ls -l
