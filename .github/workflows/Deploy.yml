@@ -13,9 +13,11 @@ jobs:
           go-version: '1.21.x'
       - name: Build
         run: go build -v main.go
+      - name: Generate Artifact
+        run: ls -l
   docker:
     needs: build
     runs-on: ubuntu-latest
     steps:
-     - name: Install dependencies
-       run: ls -l
+     - name: Download Artifact
+       run: echo Descargando artifact
